@@ -42,7 +42,7 @@ if df.empty:
 df["HOUR"] = pd.to_datetime(df["ACCIDENT_TIME"], format="%H.%M.%S").dt.hour
 
 # Add 'DAY' column to dataframe to convert day of week to number
-df["DAY"] = pd.to_datetime(df["ACCIDENT_DATE"]).dt.dayfirst.dayofweek
+# df["DAY"] = pd.to_datetime(df["ACCIDENT_DATE"]).dt.day_of_week
 
 # covert date to pd format
 df['ACCIDENT_DATE'] = pd.to_datetime(df['ACCIDENT_DATE']).dt.date
