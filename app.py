@@ -42,12 +42,12 @@ if df.empty:
 df["HOUR"] = pd.to_datetime(df["ACCIDENT_TIME"], format="%H.%M.%S").dt.hour
 
 # Add 'DAY' column to dataframe to convert day of week to number
-# df["DAY"] = pd.to_datetime(df["ACCIDENT_DATE"]).dt.day_of_week
+df["DAY"] = pd.to_datetime(df["ACCIDENT_DATE"]).dt.day_of_week
 
 # covert date to pd format
 df['ACCIDENT_DATE'] = pd.to_datetime(df['ACCIDENT_DATE']).dt.date
-min_date = datetime.datetime.strptime('2013-01-07', '%Y-%m-%d')
-max_date = datetime.datetime.strptime('2019-12-03', '%Y-%m-%d')
+min_date = datetime.datetime.strptime('07-01-2013', '%d-%m-%Y') #('2013-01-07', '%Y-%m-%d')
+max_date = datetime.datetime.strptime('03-12-2019', '%d-%m-%Y') #('2019-12-03', '%Y-%m-%d')
 
 # SIDEBAR
 st.sidebar.header("Please filter here")
