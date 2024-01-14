@@ -45,7 +45,7 @@ df["HOUR"] = pd.to_datetime(df["ACCIDENT_TIME"], format="%H.%M.%S").dt.hour
 df["DAY"] = pd.to_datetime(df["ACCIDENT_DATE"], format='%d/%m/%Y').dt.day_of_week #, errors='ignore'
 
 # covert date to pd format
-df['ACCIDENT_DATE'] = pd.to_datetime(df['ACCIDENT_DATE']).dt.date
+df['ACCIDENT_DATE'] = pd.to_datetime(df['ACCIDENT_DATE'], format='%d/%m/%Y').dt.date
 min_date = datetime.datetime.strptime('2013-01-7', '%Y-%m-%d')
 max_date = datetime.datetime.strptime('2019-12-3', '%Y-%m-%d')
 
